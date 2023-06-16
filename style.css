@@ -1,0 +1,209 @@
+/* COLOR */
+
+:root {
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --VeryDarkBlue: hsl(234, 12%, 34%);
+    --GrayishBlue: hsl(229, 6%, 66%);
+    --VeryLightGray: hsl(0, 0%, 98%);
+    --Shadow: hsl(229, 6%, 66%);
+}
+
+/* CSS RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: 0;
+    box-sizing: border-box;
+    font-size: 0.938rem;
+    list-style-type: none;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+    line-height: 0;
+}
+
+/* CSS */
+
+body {
+    font-family: "Poppins", sans-serif;
+    text-rendering: optimizeSpeed;
+    min-height: 100vh;
+
+    display: grid;
+    place-content: center;
+}
+
+h1 {
+    color: var(--VeryDarkBlue);
+    font-weight: 200;
+}
+
+b {
+    font-weight: 600;
+}
+
+h2 {
+    font-weight: 600;
+    color: var(--VeryDarkBlue);
+}
+
+p {
+    color: var(--GrayishBlue);
+}
+
+/* CSS ---------------------------------------------------------------------- */
+
+.container {
+    display: grid;
+    place-items: center;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    margin: 1rem;
+    transition: 500ms linear;
+}
+
+.header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 1/-1;
+    margin-bottom: 2rem;
+}
+
+.header h1,
+b {
+    font-size: 2.5rem;
+}
+
+.header p {
+    width: 60%;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.supervisor,
+.builder,
+.karma,
+.calculator {
+    max-width: 350px;
+    width: 100%;
+    padding: 30px 30px 40px 30px;
+    border-radius: 5px;
+    box-shadow: 0px 15px 50px -20px var(--Shadow);
+}
+
+.supervisor h2,
+.builder h2,
+.karma h2,
+.calculator h2 {
+    font-size: 1.4rem;
+    grid-column: 1;
+}
+
+.supervisor p,
+.builder p,
+.karma p,
+.calculator p {
+    width: 95%;
+    font-size: .9rem;
+    font-weight: 200;
+    letter-spacing: .03rem;
+    margin: 8px 0 30px 0;
+
+}
+
+.supervisor div,
+.builder div,
+.karma div,
+.calculator div {
+    display: flex;
+    justify-content: right;
+    margin-top: 50px;
+}
+
+.supervisor img,
+.builder img,
+.karma img,
+.calculator img {
+    width: 60px;
+}
+
+/* SUPER -------------------------------------------------------------------- */
+
+.supervisor {
+    border-top: 4px solid var(--Cyan);
+    grid-column: 1;
+    grid-row: 2;
+    transform: translateY(50%);
+}
+
+/* BUILDER ------------------------------------------------------------------ */
+
+.builder {
+    border-top: 4px solid var(--Red);
+    grid-column: 2/2;
+}
+
+/* KARMA -------------------------------------------------------------------- */
+
+.karma {
+    border-top: 4px solid var(--Orange);
+    grid-column: 2;
+    grid-row: 3;
+}
+
+/* CALCU -------------------------------------------------------------------- */
+
+.calculator {
+    border-top: 4px solid var(--Blue);
+    grid-column: 3;
+    grid-row: 2;
+    transform: translateY(50%);
+}
+
+/* MEDIA -------------------------------------------------------------------- */
+
+@media only screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        margin: 5rem 2rem;
+        transition: 500ms linear;
+    }
+
+    .header h1,
+    b {
+        font-size: 1.7rem;
+    }
+
+    .header p {
+        width: 93%;
+        font-size: 1rem;
+    }
+
+    .supervisor,
+    .builder,
+    .karma,
+    .calculator {
+        grid-column: 1;
+        grid-row: inherit;
+        transform: translateY(0%);
+    }
+
+    .supervisor div,
+    .builder div,
+    .karma div,
+    .calculator div {
+        margin-top: 25px;
+    }
+}
